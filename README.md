@@ -196,24 +196,26 @@ Integraciones futuras posibles:
 
 ```bash
 # Instalar dependencias
-npm install
+pnpm install
 
 # Renombrar archivo .env.example a .env y configurar las variables de entorno
 
-# Ejecutar migraciones
-npx prisma migrate dev
+# Ejecutar migraciones o directamente push a la base de datos
+pnpm prisma migrate dev o pnpm prisma db push
 
 # Iniciar servidor de desarrollo
-npm run dev
+pnpm dev
 ```
 ---
-# Pasos que se realizaron para configurar la plantilla: (Por si te interesa saber cómo se configuró )
+# Pasos que se realizaron para configurar la plantilla: 
+(Por si te interesa saber cómo se configuró )
 
-## Integración Prisma ORM en esta guía: https://www.prisma.io/docs/guides/frameworks/nextjs
+## 1) Integración Prisma ORM en esta guía: https://www.prisma.io/docs/guides/frameworks/nextjs
 
-## Configuración de Better-Auth: https://better-auth.com/docs/integrations/next
+## 2) Configuración de Better-Auth: https://better-auth.com/docs/integrations/next
 Generar tu secret y URL de Better-Auth en el archivo `.env`
 
+## 3) Implementación de Shadcn UI: https://ui.shadcn.com/docs/installation/next#existing-next-project
 
 ---
 

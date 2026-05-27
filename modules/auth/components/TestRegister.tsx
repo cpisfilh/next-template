@@ -1,5 +1,9 @@
-// src/modules/auth/components/TestRegister.tsx
+//Sólo usar este componente para probar la implementación de better-auth
+// Renderizarlo en el layout principal para probar el registro de usuarios
+// Click en botón
+// Verificar la base de datos
 
+// Se recomienda borrar este componente después de probar !!
 "use client";
 
 import { authClient } from "@/lib/auth-client";
