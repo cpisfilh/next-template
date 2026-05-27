@@ -217,6 +217,9 @@ Generar tu secret y URL de Better-Auth en el archivo `.env`
 
 ## 3) Implementación de Shadcn UI: https://ui.shadcn.com/docs/installation/next#existing-next-project
 
+## 4) Layout Base: https://ui.shadcn.com/blocks
+Se instaló un bloque de layout base usando Shadcn UI (pnpm dlx shadcn@latest add sidebar-07) y se implementó Dark Mode (https://ui.shadcn.com/docs/dark-mode/next)
+
 ---
 
 # Licencia
