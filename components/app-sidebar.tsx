@@ -24,6 +24,7 @@ import {
 import { TooltipProvider } from "./ui/tooltip";
 import { TeamSwitcher } from "./team-switcher";
 import { getSession } from "better-auth/api";
+import { authClient } from "@/lib/auth-client";
 
 const data = {
   user: {
@@ -156,9 +157,7 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
-  const session = getSession()
-
-  console.log(session)
+  const { data: session } = authClient.useSession()
 
   return (
     <TooltipProvider>
@@ -170,7 +169,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <NavMain items={data.navMain} />
         </SidebarContent>
         <SidebarFooter>
-          <NavUser user={data.user} />
+          <NavUser user={session?.user} />
         </SidebarFooter>
       </Sidebar>
     </TooltipProvider>
