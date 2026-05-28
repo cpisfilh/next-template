@@ -1,12 +1,20 @@
 import { redirect } from "next/navigation";
 import { getSession } from "@/lib/session";
 
-export default async function HomePage() {
+export default async function AuthLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   const session = await getSession();
 
   if (session) {
     redirect("/admin/dashboard");
   }
 
-  redirect("/auth/login");
+  return (
+    <>
+      {children}
+    </>
+  );
 }

@@ -20,8 +20,7 @@ Template full-stack moderno construido con tecnologías actuales y patrones de a
 
 ## Autenticación y Autorización
 
-- Autenticación con JWT
-- Manejo de sesión con Better Auth
+- Autenticación y manejo de sesión con Better Auth
 - Manejo de cookies
 - Roles y permisos (RBAC)
 - Rutas protegidas
@@ -158,7 +157,7 @@ Este template prioriza:
 - Mejor compatibilidad con SSR
 - Menos boilerplate
 
-TanStack Query puede agregarse opcionalmente para aplicaciones altamente dinámicas.
+TanStack Query puede agregarse opcionalmente para partes altamente dinámicas.
 
 ---
 
@@ -200,8 +199,11 @@ pnpm install
 
 # Renombrar archivo .env.example a .env y configurar las variables de entorno
 
-# Ejecutar migraciones o directamente push a la base de datos
-pnpm prisma migrate dev o pnpm prisma db push
+# Ejecutar migraciones
+pnpm prisma migrate dev
+
+# O sincronizar esquema directamente
+pnpm prisma db push
 
 # Iniciar servidor de desarrollo
 pnpm dev
@@ -219,6 +221,9 @@ Generar tu secret y URL de Better-Auth en el archivo `.env`
 
 ## 4) Layout Base: https://ui.shadcn.com/blocks
 Se instaló un bloque de layout base usando Shadcn UI (pnpm dlx shadcn@latest add sidebar-07) y se implementó Dark Mode (https://ui.shadcn.com/docs/dark-mode/next)
+
+## 5) Sistema de autenticación y rutas protegidas
+Me he guiado de https://better-auth.com/docs/authentication/email-password para dejar login, logout, sesiones, redirigir a rutas protegidas, layouts protegidos, auth ssr.
 
 ---
 
