@@ -225,6 +225,10 @@ Se instaló un bloque de layout base usando Shadcn UI (pnpm dlx shadcn@latest ad
 ## 5) Sistema de autenticación y rutas protegidas
 Me he guiado de https://better-auth.com/docs/authentication/email-password para dejar login, logout, sesiones, redirigir a rutas protegidas, layouts protegidos, auth ssr.
 
+## 6) Data Table reutilizable  + configuración del menú
+- Guía para tabla básica https://ui.shadcn.com/docs/components/radix/data-table#basic-table
+- Respecto al menu, se desacopló y se refactorizó el componente nav-main logrando un menú escalable y dinámico
+
 ---
 
 # Licencia
