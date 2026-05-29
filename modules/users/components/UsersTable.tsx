@@ -1,28 +1,21 @@
 import { columns } from "../config/columns";
 import { DataTable } from "../../../shared/components/table/data-table";
-import { UserRow } from "../types/user.types";
-import prisma  from "@/lib/prisma";
+import { getUsers } from "../services/users.service";
 
-async function getData(): Promise<UserRow[]> {
-  const users = await prisma.user.findMany()
-  return users.map((user) => ({
-    id: user.id,
-    name: user.name,
-    email: user.email,
-    image: user.image,
-    createdAt: user.createdAt.toISOString(),
-    updatedAt: user.updatedAt.toISOString(),
-  }))
+interface Props {
+  search?: string;
 }
 
-export const UsersTable = async () => {
-  const data = await getData()
+export const UsersTable = async ({ search = "" }: Props) => {
+  const data = await getUsers({ search });
   return (
-    <div>
-      <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
-            Usuarios
-          </h2>
-      <DataTable columns={columns} data={data} />
+    <div className="flex flex-col h-full border-green-500">
+      <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+        Usuarios
+      </h2>
+      <div className="flex-1 min-h-0">
+          <DataTable columns={columns} data={data} />
+        </div>
     </div>
   );
 };

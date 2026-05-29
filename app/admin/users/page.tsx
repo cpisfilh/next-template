@@ -1,9 +1,16 @@
 import { UsersTable } from "@/modules/users/components/UsersTable";
 
-const UsersPage = () => {
+type Props = {
+  searchParams: Promise<{
+    search?: string;
+  }>;
+};
+
+const UsersPage = async ({ searchParams }: Props) => {
+  const { search = "" } = await searchParams;
   return (
-    <div>
-      <UsersTable />
+    <div className="h-full">
+      <UsersTable search={search} />
     </div>
   );
 };
