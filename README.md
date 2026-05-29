@@ -1,3 +1,6 @@
+> [!WARNING]
+> Este proyecto está en desarrollo. No usar en producción.
+
 # NEXT TEMPLATE
 
 Template full-stack moderno construido con tecnologías actuales y patrones de arquitectura escalables para sistemas administrativos, CRMs, ERPs, plataformas SaaS y aplicaciones empresariales.
@@ -228,6 +231,17 @@ Me he guiado de https://better-auth.com/docs/authentication/email-password para 
 ## 6) Data Table reutilizable  + configuración del menú
 - Guía para tabla básica https://ui.shadcn.com/docs/components/radix/data-table#basic-table
 - Respecto al menu, se desacopló y se refactorizó el componente nav-main logrando un menú escalable y dinámico
+
+## 7) ToolBar para la tabla
+- Se implementó un ToolBar reutilizable para la tabla
+- Consiste en Input de busqueda (funciona con query params), botón de filtro (sólo ui), columnas y crear
+
+## 8) Paginación sencilla: https://ui.shadcn.com/docs/components/radix/data-table#pagination
+
+> [!NOTE]
+Por aqui voy! :)
+
+- Paginación mostrando metadata informativa y botones de "anterior/siguiente"
 
 ---
 
