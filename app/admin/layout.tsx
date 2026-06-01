@@ -33,7 +33,7 @@ export default async function AdminLayout({
     <>
       <SidebarProvider>
         <AppSidebar />
-        <SidebarInset>
+        <SidebarInset >
           <header className="flex h-16 shrink-0 items-center gap-2">
             <div className="flex items-center justify-between gap-2 px-4 w-full">
               <div className="flex items-center gap-2">
@@ -59,7 +59,7 @@ export default async function AdminLayout({
               <ModeToggle />
             </div>
           </header>
-          <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
+          <div className="flex flex-1 flex-col gap-4 p-4 pt-0 min-h-0">
             {children}
           </div>
         </SidebarInset>
