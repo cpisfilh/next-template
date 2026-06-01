@@ -17,9 +17,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-import { Button } from "@/components/ui/button";
-
 import { ToolbarTable } from "./toolbar-table";
+import { PaginationTable } from "./pagination-table";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -35,13 +34,19 @@ export function DataTable<TData, TValue>({
     columns,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
+    initialState: {
+      pagination: {
+        pageIndex: 0,
+        pageSize: 20,
+      },
+    },
   });
 
   return (
     <div className="flex flex-col h-full">
       <ToolbarTable />
-      <div className="flex-1 min-h-0 overflow-auto rounded-md border">
-        <Table className="h-full">
+      <div className="flex-1 overflow-auto rounded-md border">
+        <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
@@ -90,29 +95,7 @@ export function DataTable<TData, TValue>({
           </TableBody>
         </Table>
       </div>
-      <div className="flex flex-col sm:flex-row items-center justify-between mt-2 shrink-0">
-        <div>
-          Mostrando {table.getRowModel().rows?.length ?? 0} - {table.getRowModel().rows?.length ?? 0} de {table.getRowModel().rows?.length ?? 0} registros
-        </div>
-        <div className="flex items-center space-x-2">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
-          >
-            Anterior
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}
-          >
-            Siguiente
-          </Button>
-        </div>
-      </div>
+      <PaginationTable table={table} />
     </div>
   );
 }

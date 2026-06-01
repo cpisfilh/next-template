@@ -10,14 +10,15 @@ import { authClient } from "@/lib/auth-client";
 
 export default function TestRegister() {
   const handleRegister = async () => {
-    const { data, error } = await authClient.signUp.email({
-      name: "John Doe",
-      email: "john.doe@example.com",
-      password: "password1234",
+    Array.from({length:20}, (_,i) => i+1).forEach(async (i) => {
+      const { data, error } = await authClient.signUp.email({
+        name: `John Doe ${i}`,
+        email: `john.doe${i}@example.com`,
+        password: "password1234",
+      });
+      console.log(data);
+      console.log(error);
     });
-
-    console.log(data);
-    console.log(error);
   };
 
   return (

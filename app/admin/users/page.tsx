@@ -9,9 +9,7 @@ type Props = {
 const UsersPage = async ({ searchParams }: Props) => {
   const { search = "" } = await searchParams;
   return (
-    <div className="h-full">
       <UsersTable search={search} />
-    </div>
   );
 };
 
